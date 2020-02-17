@@ -1,0 +1,33 @@
+.mainDiv{
+    overflow: hidden;
+}
+.navDiv{
+    float:left;
+    display: flex;
+    padding-bottom: 1000px;
+    position: fixed;
+    z-index:1;
+    top:0;
+}
+.listDiv{
+    width:90%;
+    float:right;
+    margin:28px;
+    z-index:-1;
+}
+.pages{
+    justify-content: center;
+}
+.btn1{
+    width: 41%;
+    float: left;
+}
+.modal-backdrop.fade.in {
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+    }
+
+    .card-arrange{
+        display: flex;
+        flex-wrap: wrap;
+     }  

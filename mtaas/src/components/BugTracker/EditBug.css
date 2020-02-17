@@ -1,0 +1,15 @@
+.mainDiv{
+    overflow: hidden;
+}
+.navDiv{
+    float:left;
+    padding-bottom: 1000px;
+    position: fixed;
+    top:0;
+}
+.bugDiv{
+    float: left;
+    width:95%;
+    padding-left:100px;
+    padding-top: 30px;
+}

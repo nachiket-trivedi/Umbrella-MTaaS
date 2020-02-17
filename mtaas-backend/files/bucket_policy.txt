@@ -1,0 +1,67 @@
+{
+    "Version": "2012-10-17",
+    "Id": "Policy1572923753531",
+    "Statement": [
+        {
+            "Sid": "Stmt1572923749776",
+            "Effect": "Allow",
+            "Principal": "*",
+            "Action": [
+                "s3:DeleteObject",
+                "s3:GetObject",
+                "s3:PutObject"
+            ],
+            "Resource": "arn:aws:s3:::mtaas-course-project/*"
+        }
+    ]
+}
+
+
+git rm bucket_policy.txt --cached
+
+
+aws login: https://aws-login-iam-user.signin.aws.amazon.com/console
+Account ID or alias: aws-login-iam-user
+IAM user name: sarthakssj
+PWD: S@rthakJ@in95
+
+# For building docker images and running containers
+
+#for backend
+docker build -t bug-tracking-api .
+docker run -p 5000:5000 -d bug-tracking-api
+
+#for client
+docker build -t bug-tracking-client .
+docker run -p 3000:3000 -d bug-tracking-client
+
+#For pushing to docker hub
+docker tag <existing-image> <hub-user>/<repo-name>[:<tag>]
+docker tag bug-tracking-client:latest sarthakjain27/bug-tracking-client:v1.0
+
+docker push <hub-user>/<repo-name>:<tag>
+docker push sarthakjain27/bug-tracking-client:v1.0
+
+
+docker rmi -f <image_id> -> for removing an image forcefully
+
+docker stop <container_id> -> for stopping a docker container
+docker rm <container_id> -> for removing a stopped container
+
+
+
+1. Spin up ECS cluster - one for backend, one for frontend
+2. Create a task and then a service - for backend - as is done normally
+
+Note: Need to make changes to server_base_url in config.js file for the ip of new backend instance
+then form new image, push it to docker hub and then pull it for frontend
+
+3. For frontend - skip task and service creation. Directly ssh to EC2 instance and run following command:
+docker run -p 3000:3000 sarthakjain27/bug-tracking-frontend:v1.0
+
+OR 
+
+Do not set any limit on cpu and memory while creating task definition and provide a soft limit of 600 for
+frontend container
+
+

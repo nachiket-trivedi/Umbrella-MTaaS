@@ -1,0 +1,14 @@
+.carousel{
+    /* padding-top: -400px; */
+}
+.outerDiv{
+    height: 100%;
+    background-color: #eee
+}
+.jumbotronDiv{
+    float: top;
+}
+
+.carouselItem > img {
+    width:100%;
+}

@@ -1,0 +1,15 @@
+.mainDiv{
+    overflow: hidden;
+}
+.navDiv{
+    float:left;
+    padding-bottom: 1000px;
+    position: fixed;
+    margin:0;
+}
+.homeDiv{
+    float:left;
+    /* margin:28px; */
+    width:100%;
+    margin-left:60px;
+}
